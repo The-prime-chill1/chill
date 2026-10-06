@@ -1,8 +1,8 @@
 // Mamana Cakes & Pastries - Exact Data from Screenshots & Live Site
 
 export const BAKERY_INFO = {
-  name: "Mamana Cakes & Pastries",
-  shortName: "Mamana",
+  name: "Chill Cakes & Pastries",
+  shortName: "Chill",
   tagline: "PREMIUM CAKES & SNACKS",
   headlineMain: "Beautiful Bakes &",
   headlineHighlight: "Delicious Bites",

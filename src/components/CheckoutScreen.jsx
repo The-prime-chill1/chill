@@ -88,10 +88,10 @@ Please confirm order receipt and send collection details. Thank you!`;
                 fontSize: '1.1rem'
               }}
             >
-              M
+              C
             </div>
             <span style={{ fontWeight: 700, fontSize: '0.95rem', color: '#111111' }}>
-              Mamana Cakesnpastries
+              Chill Cakesnpastries
             </span>
           </div>
 

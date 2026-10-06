@@ -29,7 +29,7 @@ export default function ArchLogo({ className = '' }) {
           <circle cx="14" cy="4" r="1.5" fill="#D93829" />
         </g>
 
-        {/* Text: Mamana */}
+        {/* Text: Chill */}
         <text
           x="54"
           y="42"
@@ -39,7 +39,7 @@ export default function ArchLogo({ className = '' }) {
           fontWeight="bold"
           letterSpacing="-0.5"
         >
-          Mamana
+          Chill
         </text>
 
         {/* Text: Cakes n Pastries in red script style */}

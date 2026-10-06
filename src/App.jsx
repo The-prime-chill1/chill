@@ -9,6 +9,7 @@ import CrumbClub from './components/CrumbClub';
 import LocationHours from './components/LocationHours';
 import CartModal from './components/CartModal';
 import CheckoutScreen from './components/CheckoutScreen';
+import LegalPage from './components/LegalPage';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Footer from './components/Footer';
 
@@ -24,6 +25,7 @@ export default function App() {
 
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [checkoutData, setCheckoutData] = useState(null);
+  const [activeLegalPage, setActiveLegalPage] = useState(null); // 'privacy' | 'terms' | 'refund' | null
   const [currency, setCurrency] = useState('NGN'); // default matching screenshots: ₦
 
   useEffect(() => {
@@ -70,6 +72,16 @@ export default function App() {
   };
 
   const totalCartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
+  // If user opened a Legal Page (Privacy Policy, Terms of Service, Refund Policy)
+  if (activeLegalPage) {
+    return (
+      <LegalPage
+        pageType={activeLegalPage}
+        onBackToHome={() => setActiveLegalPage(null)}
+      />
+    );
+  }
 
   // If user proceeded to final checkout screen
   if (checkoutData) {
@@ -121,7 +133,7 @@ export default function App() {
       </main>
 
       {/* Footer matching Screenshot 9 */}
-      <Footer />
+      <Footer onOpenLegal={(page) => setActiveLegalPage(page)} />
 
       {/* Basket Modal matching Screenshots 1 & 2 */}
       <CartModal

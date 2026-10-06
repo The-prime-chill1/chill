@@ -128,6 +128,9 @@ export default function CartModal({
                   <img
                     src={item.image}
                     alt={item.name}
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=300&q=80';
+                    }}
                     style={{
                       width: '60px',
                       height: '60px',

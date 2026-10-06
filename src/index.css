@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Mamana Cakes & Pastries - Pixel-Perfect Duplicate Styling
+   Mamana Cakes & Pastries - Pixel-Perfect Responsive Design System
    ========================================================================== */
 
 :root {
@@ -60,6 +60,12 @@ button, input, select, textarea {
   font: inherit;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -88,16 +94,10 @@ button, input, select, textarea {
   padding: 0.85rem 1.5rem;
 }
 
-/* Arch Logo matching screenshot */
 .arch-logo {
   display: flex;
   align-items: center;
   text-decoration: none;
-}
-
-.arch-logo-svg {
-  height: 52px;
-  width: auto;
 }
 
 .main-nav {
@@ -176,6 +176,7 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #241410;
   background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1800&q=85');
   background-size: cover;
   background-position: center 30%;
@@ -201,7 +202,7 @@ button, input, select, textarea {
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.6rem, 5.2vw, 4.2rem);
+  font-size: clamp(2.3rem, 5vw, 4.2rem);
   font-weight: 700;
   line-height: 1.15;
   margin-bottom: 1.5rem;
@@ -242,6 +243,7 @@ button, input, select, textarea {
   cursor: pointer;
   transition: background-color 150ms ease, transform 150ms ease;
   display: inline-block;
+  text-align: center;
 }
 
 .btn-red-pill:hover {
@@ -260,6 +262,7 @@ button, input, select, textarea {
   cursor: pointer;
   transition: all 150ms ease;
   display: inline-block;
+  text-align: center;
 }
 
 .btn-outline-pill:hover {
@@ -587,7 +590,7 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   Request a Custom Quote (Exact Form from Screenshot)
+   Request a Custom Quote
    ========================================================================== */
 .custom-quote-section {
   padding: 5rem 0;
@@ -605,7 +608,6 @@ button, input, select, textarea {
   border: 1px solid #E5E7EB;
 }
 
-/* Left Dark Panel */
 .quote-left-panel {
   background: #181818;
   color: #FFFFFF;
@@ -657,7 +659,6 @@ button, input, select, textarea {
   font-weight: bold;
 }
 
-/* Right Form Panel */
 .quote-right-panel {
   background: #FFFFFF;
   padding: 2.75rem 2.5rem;
@@ -738,7 +739,7 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   Join the Crumb Club (Newsletter Banner from Screenshot)
+   Join the Crumb Club
    ========================================================================== */
 .crumb-club-section {
   background: #0A0A0A url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
@@ -814,6 +815,7 @@ button, input, select, textarea {
   font-weight: 700;
   cursor: pointer;
   transition: background-color 150ms ease;
+  white-space: nowrap;
 }
 
 .crumb-btn:hover {
@@ -821,7 +823,7 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   Find Us (Location & Hours Section from Screenshot)
+   Find Us (Location & Hours)
    ========================================================================== */
 .find-us-section {
   padding: 5.5rem 0;
@@ -840,6 +842,7 @@ button, input, select, textarea {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   height: 420px;
+  background: #EEE;
 }
 
 .find-us-image-card img {
@@ -896,7 +899,7 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   Footer (from Screenshot 4)
+   Footer - Responsive & Clean on Mobile
    ========================================================================== */
 .site-footer {
   background: #FFFFFF;
@@ -926,11 +929,12 @@ button, input, select, textarea {
   gap: 0.5rem;
   font-size: 0.88rem;
   color: var(--brand-text-muted);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.45rem;
 }
 
 .footer-contact-item svg {
   color: var(--brand-red);
+  flex-shrink: 0;
 }
 
 .footer-social-row {
@@ -942,6 +946,7 @@ button, input, select, textarea {
 .footer-social-link {
   color: #374151;
   transition: color 150ms ease;
+  padding: 0.25rem;
 }
 
 .footer-social-link:hover {
@@ -967,6 +972,8 @@ button, input, select, textarea {
   font-size: 0.9rem;
   color: var(--brand-text-muted);
   transition: color 150ms ease;
+  display: inline-block;
+  padding: 0.15rem 0;
 }
 
 .footer-link:hover {
@@ -982,7 +989,7 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   Floating WhatsApp Button (Present on All Screenshots)
+   Floating WhatsApp Button
    ========================================================================== */
 .floating-whatsapp {
   position: fixed;
@@ -1008,7 +1015,7 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   Basket Modal / Drawer
+   Cart Overlay & Modal
    ========================================================================== */
 .cart-overlay {
   position: fixed;
@@ -1016,122 +1023,190 @@ button, input, select, textarea {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
   z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 200ms ease;
-}
-
-.cart-overlay.open {
-  opacity: 1;
-  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .cart-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.95);
-  width: 90%;
-  max-width: 480px;
-  max-height: 85vh;
+  width: 100%;
+  max-width: 440px;
+  max-height: 90vh;
   background: #FFFFFF;
   border-radius: 16px;
-  z-index: 1001;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 200ms ease;
+  overflow: hidden;
+  animation: modalScaleIn 180ms ease-out;
 }
 
-.cart-overlay.open .cart-modal,
-.cart-modal.open {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.cart-modal-header {
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid var(--brand-border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.cart-modal-header h3 {
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #111111;
-}
-
-.cart-close-btn {
-  background: none;
-  border: none;
-  font-size: 1.25rem;
-  color: #666;
-  cursor: pointer;
-}
-
-.cart-modal-body {
-  padding: 1.5rem;
-  overflow-y: auto;
-  flex-grow: 1;
-}
-
-.cart-modal-footer {
-  padding: 1.25rem 1.5rem;
-  border-top: 1px solid var(--brand-border);
-  background: #F9FAFB;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+@keyframes modalScaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 /* ==========================================================================
-   Responsive
+   Comprehensive Tablet (768px - 1024px) & Mobile (< 768px) Responsiveness
    ========================================================================== */
+
+/* Tablet Optimization (max-width: 1024px) */
 @media (max-width: 1024px) {
   .past-work-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
   .express-menu-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
   .find-us-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
   .find-us-image-card {
-    height: 320px;
+    height: 340px;
   }
   .quote-box-wrapper {
     grid-template-columns: 1fr;
   }
+  .footer-grid {
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 2rem;
+  }
 }
 
+/* Mobile Devices Optimization (max-width: 768px) */
 @media (max-width: 768px) {
+  .site-header {
+    padding: 0;
+  }
+  .header-container {
+    padding: 0.65rem 1rem;
+  }
   .main-nav {
     display: none;
   }
   .mobile-menu-btn {
     display: block;
   }
+  .hero-section {
+    padding: 4rem 1.25rem;
+    min-height: 480px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-red-pill, .btn-outline-pill {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+  }
+  .featured-bakes-section {
+    padding: 3.5rem 0 2.5rem 0;
+  }
+  .chalkboard-container {
+    padding: 1.5rem 1.15rem;
+    border-radius: 12px;
+  }
+  .chalkboard-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 1.15rem 0;
+  }
+  .past-work-section, .order-menu-section, .custom-quote-section, .find-us-section {
+    padding: 3.5rem 0;
+  }
   .past-work-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
   .express-menu-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .order-menu-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .btn-view-basket {
+    width: 100%;
+    justify-content: center;
+  }
+  .quote-left-panel {
+    padding: 2rem 1.5rem;
+  }
+  .quote-right-panel {
+    padding: 2rem 1.5rem;
   }
   .quote-form-grid {
     grid-template-columns: 1fr;
+    gap: 0.85rem;
   }
   .form-field.full {
     grid-column: span 1;
   }
+  .crumb-club-section {
+    padding: 3.5rem 1.25rem;
+  }
+  .crumb-form {
+    flex-direction: column;
+  }
+  .crumb-btn {
+    width: 100%;
+    padding: 0.8rem;
+  }
+  .find-us-details-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .find-us-item {
+    grid-column: span 1 !important;
+  }
+  .find-us-image-card {
+    height: 240px;
+    border-radius: 12px;
+  }
+
+  /* Specific Mobile Footer Styling */
+  .site-footer {
+    padding: 3rem 0 1.5rem 0;
+  }
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .footer-brand {
+    text-align: left;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--brand-border);
+  }
+  .footer-contact-item {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+  .footer-social-row {
+    margin-top: 1rem;
+    gap: 1.25rem;
+  }
+  .footer-col h4 {
+    margin-bottom: 0.85rem;
+  }
+  .footer-links-list {
+    gap: 0.85rem;
+  }
+  .footer-link {
+    font-size: 0.95rem;
+    padding: 0.35rem 0;
+  }
+  .floating-whatsapp {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 50px;
+    height: 50px;
   }
 }

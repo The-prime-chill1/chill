@@ -52,6 +52,9 @@ export default function Menu({ onAddToCart, onOpenCart, currency }) {
                 alt={item.name}
                 className="express-card-img"
                 loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80';
+                }}
               />
               <div className="express-card-body">
                 <h3 className="express-card-title">{item.name}</h3>

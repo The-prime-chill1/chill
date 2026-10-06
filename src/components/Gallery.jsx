@@ -37,7 +37,14 @@ export default function Gallery() {
         <div className="past-work-grid">
           {filteredItems.map((item) => (
             <div key={item.id} className="past-work-card">
-              <img src={item.image} alt={item.title} loading="lazy" />
+              <img
+                src={item.image}
+                alt={item.title}
+                loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&w=800&q=80';
+                }}
+              />
               <div className="past-work-overlay">
                 <span className="past-work-tag">{item.category}</span>
                 <h3 className="past-work-title">{item.title}</h3>

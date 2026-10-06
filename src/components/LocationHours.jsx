@@ -12,6 +12,9 @@ export default function LocationHours() {
               src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80"
               alt="Warm bakery storefront at dusk"
               loading="lazy"
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1000&q=80';
+              }}
             />
           </div>
 

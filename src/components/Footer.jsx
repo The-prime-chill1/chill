@@ -2,7 +2,7 @@ import React from 'react';
 import ArchLogo from './ArchLogo';
 import { BAKERY_INFO } from '../data/bakeryData';
 
-export default function Footer() {
+export default function Footer({ onOpenLegal }) {
   return (
     <footer className="site-footer">
       <div className="container">
@@ -97,7 +97,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="footer-copyright">
-          © 2026 Mamana Cakesnpastries. All rights reserved.
+          © 2026 Chill Cakesnpastries. All rights reserved.
         </div>
       </div>
     </footer>
